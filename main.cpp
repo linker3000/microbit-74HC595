@@ -32,8 +32,9 @@ Microbit        Function    74HC595
    P0           MOSI        Pin 14 (SER)
    P1           CE          Pin 12 (RCLK)
    P2           SER         Pin 11 (SRCLK)
-   GND          ~CE         Pin 13 (~CE)
-   VCC(3.3v)    VCC
+   GND          ~CE         Pin 8, Pin 13 (~CE)
+   VCC (3.3v)    VCC         Pin 16
+   
    
 Connect LEDs to 74HC595 outputs (via 470Ohm-1K resistors) to see output.
 For stability, connect a 0.1uF capacitor between VCC and GND on the 74HC595
