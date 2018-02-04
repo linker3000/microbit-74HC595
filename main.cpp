@@ -42,7 +42,6 @@ chip, as close to its body as possible.
 
 */
 
-//#include "mbed.h"
 #include "MicroBit.h"
 #include "nkpins.h"
 
@@ -50,11 +49,8 @@ MicroBit uBit;
 
 // Moving SPI pins we want to use to the large P0 etc connections. 
 // miso remains on the default pin definition as we're not using it here
-
 SPI spi(mbit_p0, mbit_p15, mbit_p2); // mosi, miso, sclk
 DigitalOut cs(mbit_p1); //Chip select pin for the shift register
-
-//DigitalOut myled(p1); 
 
 int main()
 {
@@ -74,13 +70,13 @@ int main()
     cs = 0;
 
     // Load up the shift register
-    // Send 0x8f, the command to read the WHOAMI register
     while(1){
     cs = 1;
     spi.write(0x55);
-
     cs = 0;
     wait(0.5);
+
+   // Load up alternate bits
     cs = 1;
     spi.write(0xAA);
     cs = 0;
@@ -90,6 +86,9 @@ int main()
     // If main exits, there may still be other fibers running or registered event handlers etc.
     // Simply release this fiber, which will mean we enter the scheduler. Worse case, we then
     // sit in the idle task forever, in a power efficient sleep.
-    release_fiber();
+ 
+   // We'll never get here unless something goes very wrong.
+   release_fiber();
+
 }
 
