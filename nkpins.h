@@ -1,4 +1,8 @@
-// Microbit pins - for my sanity
+/* 
+Microbit pins - for my sanity
+
+The default mbed Pxxx definitions do not align with those of the micro:bit - so these definitions add clarity...
+*/
 
 #define mbit_p0                     P0_3        //P0 is the left most pad (ANALOG/DIGITAL) used to be P0_3 on green board
 #define mbit_p1                     P0_2        //P1 is the middle pad (ANALOG/DIGITAL)
