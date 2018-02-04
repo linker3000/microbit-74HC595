@@ -33,7 +33,7 @@ Microbit        Function    74HC595
    P1           CE          Pin 12 (RCLK)
    P2           SER         Pin 11 (SRCLK)
    GND          ~CE         Pin 8, Pin 13 (~CE)
-   VCC (3.3v)    VCC         Pin 16
+   VCC (3.3v)   VCC         Pin 16
    
    
 Connect LEDs to 74HC595 outputs (via 470Ohm-1K resistors) to see output.
